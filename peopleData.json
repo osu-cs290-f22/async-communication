@@ -30,8 +30,21 @@
       {
         "caption": "Classic Leia.",
         "url": "https://www.girlgeekupnorth.co.uk/wp-content/uploads/2016/12/Princess-Leia-1.jpg"
+      },
+      {
+        "url": "https://placekitten.com/480/480?image=2",
+        "caption": "Kitty #2"
+      },
+      {
+        "url": "https://placekitten.com/480/480?image=3",
+        "caption": "Kitty #3"
+      },
+      {
+        "url": "https://placekitten.com/480/480?image=4",
+        "caption": "Kitty #4"
       }
-    ]
+    ],
+    "_locals": {}
   },
   "rey": {
     "name": "Rey",
