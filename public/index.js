@@ -21,13 +21,31 @@ function handleModalAcceptClick() {
     alert("You must fill in all of the fields!")
   } else {
 
-    var photoCardTemplate = Handlebars.templates.photoCard
-    var newPhotoCardHTML = photoCardTemplate({
-      url: photoURL,
-      caption: caption
+    var reqUrl = "/people/" + getPersonIdFromURL() + "/addPhoto"
+    fetch(reqUrl, {
+      method: "POST",
+      body: JSON.stringify({
+        url: photoURL,
+        caption: caption
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(function (res) {
+      if (res.status === 200) {
+        var photoCardTemplate = Handlebars.templates.photoCard
+        var newPhotoCardHTML = photoCardTemplate({
+          url: photoURL,
+          caption: caption
+        })
+        var photoCardContainer = document.querySelector('.photo-card-container')
+        photoCardContainer.insertAdjacentHTML('beforeend', newPhotoCardHTML)
+      } else {
+        alert("An error occurred communicating with the server: " + res.status)
+      }
+    }).catch(function (err) {
+      alert("An error occurred communicating with the server: " + err)
     })
-    var photoCardContainer = document.querySelector('.photo-card-container')
-    photoCardContainer.insertAdjacentHTML('beforeend', newPhotoCardHTML)
 
     hideModal()
 

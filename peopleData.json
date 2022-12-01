@@ -42,6 +42,14 @@
       {
         "url": "https://placekitten.com/480/480?image=4",
         "caption": "Kitty #4"
+      },
+      {
+        "url": "https://placekitten.com/480/480?image=5",
+        "caption": "Kitty #5"
+      },
+      {
+        "url": "https://placekitten.com/480/480",
+        "caption": "Client-side kitty"
       }
     ],
     "_locals": {}
